@@ -8,8 +8,7 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Header/>
-      {/* <SideBox/> */}
-      <Login/>
+         <Login/>
       </ChakraProvider>
   );
 }
