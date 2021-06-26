@@ -51,7 +51,7 @@ const AuthenticationService ={
         },
         executeSingupService(username,password,email){
             console.log(username,password,email);
-            return axios.post("http://localhost:3333/sing_up",{
+            return axios.post("http://localhost:3333/Signup",{
                username,password,email
             })
     
