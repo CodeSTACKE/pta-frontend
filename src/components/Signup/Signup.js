@@ -59,21 +59,13 @@ class Signup extends Component {
           {...props}
           maxW={{ xl: "90%" }}
         >
-          <Box p="4" width="650px" alignItems="center" height="200px">
-            {/* <Heading as="h5" size="xs">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                            when an unknown printer took a galley of type and scrambled it to make a type 
-                            specimen book. It has survived not only five centuries, but also the leap into electronic 
-                            typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release 
-                            of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop 
-                            publishing software like Aldus PageMaker including versions of Lorem Ipsum */}
+          <Box p="4" width="650px" marginLeft="-300px" height="200px">
             <img src={image} alt="ptaImage" />
-            {/* </Heading> */}
-          </Box>
+           </Box>
 
           <Spacer />
 
-          <Box marginRight="850px" height="1000px" width="600px">
+          <Box marginRight="550px" height="500px" width="1000px">
             <Heading fontSize="20px" textAlign="center">
               Signup Form{" "}
             </Heading>

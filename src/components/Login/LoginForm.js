@@ -52,13 +52,13 @@ render(){
       <div>
       <Flex color="grey" marginTop="40px" direction="row" {...props} maxW={{xl:"90%"}}>
       
-            <Box p="4" width="550px" alignItems="left" height="200px" >
+            <Box p="4" width="550px" alignItems="left" height="200px" justifyContent="justify" >
                     <Heading as="h5" size="xs">Welcome to the Austin High PTA!
 PTA is a vital resource at Austin High. Our goal has always been to make sure our teachers, staff, and parents have the resources they need to make high school meaningful and successful for every student. We remain steadfast Our goal. Everything we do is made possible by PTA members, who give money and time to help make Austin High the amazing school that it is. Please consider  becoming a member, or making a donation. If you have any questions about what we do or how to get involved, please reach out! Email us at austinhighpta@gmail.com We look forward to hearing from you!
                     </Heading>
             </Box>
       <Spacer/>
-        <Box width="650px" height="1000px">
+        <Box width="650px" height="500px">
         <Heading  fontSize="20px" textAlign="center">Login Form </Heading>
                <form className="flex flex-col gap-4 mb-8" > 
                   <FormControl id="username" isRequired>
