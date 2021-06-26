@@ -1,20 +1,16 @@
 import './App.css';
 import React from 'react';
-import  {Login} from 'components/Login';
-import {Header} from 'components/Header';
+
 import './index.css';
 import {ChakraProvider, theme } from '@chakra-ui/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-
+import PtaApp from 'components/PtaApp';
 // const queryClient=new QueryClient();
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      {/* <QueryClientProvider client={queryClient}> */}
-      <Header/>
-         <Login/>
-         {/* </QueryClientProvider> */}
+     <PtaApp/>
       </ChakraProvider>
   );
 }
