@@ -7,8 +7,15 @@ const AuthenticationService ={
         return axios.post("http://localhost:3333/authenticate",{
            username,password
         })
-
-    }, 
+    },
+        executeSingupService(username,password,email){
+            console.log(username,password,email);
+            return axios.post("http://localhost:3333/Signup",{
+               username,password,email
+            })
+    
+        },
+ 
     setupAxiosInterceptors(token){
         console.log(token);
         axios.interceptors.request.use(
@@ -48,13 +55,7 @@ const AuthenticationService ={
         logout(){
             sessionStorage.removeItem(USER_NAME_SESSION_ATTRIBUTE_NAME);
         },
-        executeSingupService(username,password,email){
-            console.log(username,password,email);
-            return axios.post("http://localhost:3333/Signup",{
-               username,password,email
-            })
-    
-        },
+       
        
 }
 export default AuthenticationService;
