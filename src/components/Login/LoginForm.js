@@ -12,12 +12,14 @@ class LoginForm extends Component {
       password: '',
       hasLoginFailed:false,
       showSuccessMsg:false,
+      showSignupMsg:true,
+     
     };
   
   this.handleChange = this.handleChange.bind(this);
   this.loginClicked = this.loginClicked.bind(this);
-
-}
+  this.SignUpclicked=this.SignUpclicked.bind(this);
+ }
 handleChange(event) {
       this.setState({
     [event.target.name]: event.target.value,
@@ -41,6 +43,11 @@ loginClicked(event){
     }
   )
  
+}
+SignUpclicked(event){
+event.preventDefault();
+this.props.history.push(`/Signup/${this.state.showSignupMsg}`);
+
 }
 
 render(){
@@ -76,7 +83,8 @@ PTA is a vital resource at Austin High. Our goal has always been to make sure ou
                      </FormControl>
                      <Button mt={4} colorScheme="teal" type="submit" className="max-w-xs" onClick={this.loginClicked}>Login</Button>
               </form>
-                   <a href="/Signup"> <Button mt={2} colorScheme="teal" type="submit" className="max-w-xl">New User? Sign Up</Button></a>
+                   <Button mt={2} colorScheme="teal" type="submit" className="max-w-xl" onClick={this.SignUpclicked}>
+                   New User? Sign Up</Button>
           </Box>
          </Flex>
      </div>

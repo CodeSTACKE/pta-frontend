@@ -16,7 +16,7 @@ class PtaApp extends Component{
                     <Switch>
                         <Route path="/" exact component={Login}/>
                         <Route path="/login" exact component={Login}/>
-                        <Route path="/Signup" exact component={Signup}/>
+                        <Route path="/Signup/:showSignupMsg" exact component={Signup}/>
                         <AuthenticatedRoute path="/welcome/:name" component={Topic}/>
                         <AuthenticatedRoute path="/Logout"component={Logout}/>
                     </Switch>

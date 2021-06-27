@@ -1,6 +1,5 @@
 import axios from 'axios';
 export const USER_NAME_SESSION_ATTRIBUTE_NAME='authenticatedUser';
-
 const AuthenticationService ={
    
     executeJWTAuthenticationService(username,password){
@@ -55,6 +54,7 @@ const AuthenticationService ={
                username,password,email
             })
     
-        }, 
+        },
+       
 }
 export default AuthenticationService;

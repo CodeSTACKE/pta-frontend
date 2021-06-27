@@ -6,7 +6,7 @@ function Topic(){
           <div className="container-fluid col-md-4 mt-5">
             <h3>Topic</h3>
             <h5>List of Topic</h5>
-            <p><a href="PostComments.js">Parenting and Family Resources</a></p>
+            <p>Parenting and Family Resources</p>
             <p>Upcoming Events</p>
             <p>Carpool</p>
                   

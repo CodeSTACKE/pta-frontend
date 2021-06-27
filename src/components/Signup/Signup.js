@@ -20,7 +20,8 @@ class Signup extends Component {
       username: "",
       password: "",
       email: "",
-    };
+      hasSingupFailed:"",
+     };
     this.handleChange = this.handleChange.bind(this);
     this.Signup = this.Signup.bind(this);
   }
@@ -31,27 +32,36 @@ class Signup extends Component {
   }
   Signup(event){
       event.preventDefault(); 
+console.log(this.state.username)
+    if(this.state.username==="" && this.state.password==="" && this.state.email===""){
+      this.setState({hasSingupFailed:true})
+      this.setState({showSuccessMsg:false})
+    }
+    else {
+
+    
        AuthenticationService
       .executeSingupService(this.state.username,this.state.password,this.state.email)
       .then((response)=>{
         console.log(response)
          this.props.history.push(`/`);
-                 
+                
          
         }
       ).catch(
         ()=>{
-          this.setState({hasLoginFailed:true})
+          this.setState({hasSingupFailed:true})
           this.setState({showSuccessMsg:false})
         }
       )
-     
+      }
   }
 
   render() {
     return (
       <div>
-        <Flex
+          {this.state.hasSingupFailed && <div className="alert alert-warning" style={{color:"red",textAlign:"center", fontSize:"20px"}}>Invalid Credentials Please Enter again</div>}
+          <Flex
           color="grey"
           marginTop="40px"
           marginLeft="500px"
