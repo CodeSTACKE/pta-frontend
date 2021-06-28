@@ -44,6 +44,13 @@ class Resource extends Component {
 
   ViewResourceClicked(id) {
     console.log(id);
+    this.setState({
+        id:id
+    },()=>
+    this.props.history.push({
+        pathname:'/ViewResource',
+        state:{viewid:this.state.id}
+  }))
   }
 
   updateResourceClicked(id) {

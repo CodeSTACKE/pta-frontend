@@ -11,6 +11,7 @@ import Resource from 'pages/Resource';
 import CarPool from 'pages/CarPool';
 import UpcomingEvents from 'pages/UpComingEvents';
 import {EditForm} from 'components/EditForm';
+import {ViewResource} from 'components/View';
 
 class PtaApp extends Component{
     render(){
@@ -27,6 +28,7 @@ class PtaApp extends Component{
                         <AuthenticatedRoute path="/resource" component={Resource}/>
                         <AuthenticatedRoute path="/AddForm" component={AddForm}/>
                         <AuthenticatedRoute path="/EditForm" component={EditForm}/>
+                         <AuthenticatedRoute path="/ViewResource" component={ViewResource}/>
                         <AuthenticatedRoute path="/UpcomingEvents" component={UpcomingEvents}/>
                         <AuthenticatedRoute path="/CarPool" component={CarPool}/>
                         <AuthenticatedRoute path="/Logout"component={Logout}/>
