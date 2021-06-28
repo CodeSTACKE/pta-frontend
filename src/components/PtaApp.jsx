@@ -6,6 +6,7 @@ import Topic from 'pages/Topic.js';
 import  {Login} from 'components/Login';
 import {Header} from 'components/Header';
 import {Logout} from 'components/Logout';
+import {AddForm} from 'components/AddForm';
 import Resource from 'pages/Resource';
 import CarPool from 'pages/CarPool';
 import UpcomingEvents from 'pages/UpComingEvents';
@@ -23,12 +24,13 @@ class PtaApp extends Component{
                         <Route path="/Signup/:showSignupMsg" exact component={Signup}/>
                         <AuthenticatedRoute path="/welcome/:name" component={Topic}/>
                         <AuthenticatedRoute path="/resource" component={Resource}/>
+                        <AuthenticatedRoute path="/AddForm" component={AddForm}/>
                         <AuthenticatedRoute path="/UpcomingEvents" component={UpcomingEvents}/>
                         <AuthenticatedRoute path="/CarPool" component={CarPool}/>
                         <AuthenticatedRoute path="/Logout"component={Logout}/>
                     </Switch>
                 </>
-            </Router>
+            </Router>             
         </div>
     );
 }

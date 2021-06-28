@@ -1,6 +1,6 @@
 import React from "react";
 import 'components/Wrapper/style.css';
-import {Box,Divider,Heading,ListItem,ListIcon,List,MdCheckCircle} from '@chakra-ui/react'
+import {Box,Divider,Heading} from '@chakra-ui/react'
 import image from "components/images/logo.png";
 import {Link} from 'react-router-dom';
 

@@ -1,10 +1,13 @@
-import axios from'axios';
+// import axios from'axios';
 
-const TopicServices ={
+// const TopicServices ={
    
-    reteriveAllResources(){
-       return axios.get("http://localhost:3333/resource")       
-        }
-    }
+//     reteriveAllResources(id){
+//        return axios.get(`http://localhost:3333/resource/${id}`,{headers:{
+//            authorization:
+//        }});      
+//         },
+ 
+//     }
 
-export default TopicServices;
+// export default TopicServices;

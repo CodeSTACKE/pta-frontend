@@ -8,8 +8,8 @@ class LoginForm extends Component {
   constructor(props){
     super(props);
     this.state = {
-      username: '',
-      password: '',
+      username: 'sudha',
+      password: 'sudha',
       hasLoginFailed:false,
       showSuccessMsg:false,
       showSignupMsg:true,
