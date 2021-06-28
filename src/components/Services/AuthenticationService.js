@@ -68,7 +68,28 @@ class  AuthenticationService extends Component{
         addResources(author,content,title){
             console.log(this.state.token);
             return axios.post(`http://localhost:3333/resource`,{
-            author,content,title,
+           author,content,title,
+                headers:{
+                    'Authorization' :`Bearer ${this.state.token}`
+                }
+              
+        })
+        }
+        getResources(id){
+            console.log(this.state.token);
+            return axios.get(`http://localhost:3333/resource/${id}`,{
+           
+                headers:{
+                    'Authorization' :`Bearer ${this.state.token}`
+                }
+              
+        })
+        }
+        updateResources(id,author,content,
+            title ){
+                console.log("Updated resource",id);
+            return axios.put(`http://localhost:3333/resource/${id}`,{
+                author,content,title,
                 headers:{
                     'Authorization' :`Bearer ${this.state.token}`
                 }

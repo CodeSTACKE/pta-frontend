@@ -10,6 +10,7 @@ import {AddForm} from 'components/AddForm';
 import Resource from 'pages/Resource';
 import CarPool from 'pages/CarPool';
 import UpcomingEvents from 'pages/UpComingEvents';
+import {EditForm} from 'components/EditForm';
 
 class PtaApp extends Component{
     render(){
@@ -25,6 +26,7 @@ class PtaApp extends Component{
                         <AuthenticatedRoute path="/welcome/:name" component={Topic}/>
                         <AuthenticatedRoute path="/resource" component={Resource}/>
                         <AuthenticatedRoute path="/AddForm" component={AddForm}/>
+                        <AuthenticatedRoute path="/EditForm" component={EditForm}/>
                         <AuthenticatedRoute path="/UpcomingEvents" component={UpcomingEvents}/>
                         <AuthenticatedRoute path="/CarPool" component={CarPool}/>
                         <AuthenticatedRoute path="/Logout"component={Logout}/>

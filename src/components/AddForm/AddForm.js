@@ -2,15 +2,18 @@ import React, { Component } from "react";
 import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import { AuthenticationService } from "components/Services";
 
+
 class AddForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      author: "",
+      id: "",
+        author: "",
       content: "",
       title: "",
       validMsg: "",
     };
+  
     this.onSubmit = this.onSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -20,25 +23,26 @@ class AddForm extends Component {
     });
   }
   onSubmit(event) {
-    event.preventDefault();
-    console.log(this.state.content);
-    if (
-      this.state.author === "" &&
+    event.preventDefault();  
+        
+      if (this.state.author === "" &&
       this.state.content === "" &&
       this.state.title === ""
     ) {
       this.setState({ ValidMsg: true });
-    } else {
-      AuthenticationService.addResources(
-        this.state.author,
-        this.state.content,
-        this.state.title
-      ).then((response) => {
-        console.log(response);
-        this.props.history.push(`/resource`);
-      });
     }
-  }
+   
+    else {
+            AuthenticationService.addResources(
+                this.state.author,this.state.content,
+      this.state.title 
+              ).then((response) => {
+                console.log(response);
+                this.props.history.push(`/resource`);
+              });
+        }
+        
+      }
 
   render() {
     return (
