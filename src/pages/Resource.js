@@ -62,8 +62,6 @@ updateResourceClicked(id){
                         <th>Content</th>
                         <th>Title</th>
                    </tr>    
-                        
-                   
                 </thead>
                 <tbody>
                     {this.state.resource.map(resource=>
@@ -72,7 +70,6 @@ updateResourceClicked(id){
                             <td>{resource.author}</td>
                             <td>{resource.content}</td>
                             <td>{resource.title}</td>
-                            <td>{resource.comment}</td>
                             <td><Button colorScheme="teal" type="submit" className="max-w-xl" onClick={()=>this.ViewResourceClicked(resource.id)}>View</Button></td>  
                             <td><Button colorScheme="teal" type="submit" className="max-w-xl" onClick={()=>this.updateResourceClicked(resource.id)}>Update</Button></td> 
                         </tr>
@@ -81,7 +78,7 @@ updateResourceClicked(id){
                 </tbody>
             </table>
             <div>
-            <td><Button colorScheme="teal" type="submit" className="max-w-xl" onClick={()=>this.AddResourceClicked()}>Add</Button></td>
+            <Button colorScheme="teal" type="submit" className="max-w-xl" onClick={()=>this.AddResourceClicked()}>Add</Button>
             </div>
 
             </div>

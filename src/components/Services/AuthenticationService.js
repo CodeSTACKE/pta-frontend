@@ -65,6 +65,16 @@ class  AuthenticationService extends Component{
               
         })
         }
+        addResources(author,content,title){
+            console.log(this.state.token);
+            return axios.post(`http://localhost:3333/resource`,{
+            author,content,title,
+                headers:{
+                    'Authorization' :`Bearer ${this.state.token}`
+                }
+              
+        })
+        }
         setupAxiosInterceptors(token){
             console.log(token);
             axios.interceptors.request.use(
