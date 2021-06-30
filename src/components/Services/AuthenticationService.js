@@ -2,15 +2,10 @@ import axios from 'axios';
 import {Component} from "react";
 export const USER_NAME_SESSION_ATTRIBUTE_NAME='authenticatedUser';
 
-class  AuthenticationService extends Component{
-   constructor(props){
-       super(props)
-    this.state={
-        token:''
-    }
+class AuthenticationService  extends Component{
  
-   }
-    
+
+   
     executeJWTAuthenticationService(username,password){
         console.log(username,password);
         return axios.post("http://localhost:3333/authenticate",{
@@ -33,18 +28,14 @@ class  AuthenticationService extends Component{
               return user;
         }
           registerSucessfulLoginForJWT(username,token){
-              this.setToken(token);
-            sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME,username);
+             sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME,username);
             this.setupAxiosInterceptors(this.createJWTToken(token));
           }
         createJWTToken(token){
             return  'Bearer ' +token;
         
         }
-        setToken(token){
-                this.setState({token:token});
-        }
-        logout(){
+          logout(){
             sessionStorage.removeItem(USER_NAME_SESSION_ATTRIBUTE_NAME);
     
         }
@@ -56,43 +47,34 @@ class  AuthenticationService extends Component{
     
         }
         reteriveAllResources(username){
-            console.log(this.state.token);
-            return axios.get(`http://localhost:3333/resource`,{
-            
-                headers:{
-                    'Authorization' :`Bearer ${this.state.token}`
-                }
-              
-        })
-        }
+                return axios.get(`http://localhost:3333/resource`)
+            }
+
+
         addResources(author,content,title){
-            console.log(this.state.token);
-            return axios.post(`http://localhost:3333/resource`,{
-           author,content,title,
-                headers:{
-                    'Authorization' :`Bearer ${this.state.token}`
-                }
-              
-        })
+        return axios.post(`http://localhost:3333/resource`,{
+           author,content,title})
         }
+
         getResources(id){
-            console.log(this.state.token);
-            return axios.get(`http://localhost:3333/resource/${id}`,{
-           
-                headers:{
-                    'Authorization' :`Bearer ${this.state.token}`
-                }
-              
-        })
-        }
+                    return axios.get(`http://localhost:3333/resource/${id}`)
+            }
+
         updateResources(id,author,content,
             title ){
                 console.log("Updated resource",id);
             return axios.put(`http://localhost:3333/resource/${id}`,{
                 author,content,title,
-                headers:{
-                    'Authorization' :`Bearer ${this.state.token}`
-                }
+  
+        })
+        }
+        
+        addComments(id,comments,comment)
+             {
+                console.log("Updated resource",id);
+            return axios.put(`http://localhost:3333/resource/${id}`,{
+              comments,comment,
+                
               
         })
         }
@@ -102,11 +84,10 @@ class  AuthenticationService extends Component{
                 (config)=>{
                     console.log(this.isUserLoggedIn)
                     if(this.isUserLoggedIn()){
-                        config.headers.authorization = this.state.token.headers.authorization;
+                        config.headers.authorization = token;
                         console.log(config);
                     }
                     console.log(config);
-                    axios.interceptors.request.eject();
                     return config;
                 })    
           }

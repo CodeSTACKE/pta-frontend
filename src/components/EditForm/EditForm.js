@@ -1,5 +1,5 @@
 import{Component} from 'react';
-import { AuthenticationService } from "components/Services";
+import { AuthenticationService } from 'components/Services';
 import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 
 class EditForm extends Component {
@@ -89,7 +89,7 @@ class EditForm extends Component {
                 className="max-w-xs"
                 onClick={this.onSubmitHandle}
               >
-                Add Post
+              Update Post
               </Button>
             </form>
           </div>

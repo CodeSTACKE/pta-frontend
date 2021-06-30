@@ -1,17 +1,18 @@
 import {Component} from 'react';
 import {BrowserRouter as Router,Route,Switch } from 'react-router-dom';
 import  {Signup} from 'components/Signup';
-import AuthenticatedRoute from 'components/Services/AuthenticatedRoute.js';
+import AuthenticatedRoute from 'components/Services/AuthenticatedRoute';
 import Topic from 'pages/Topic.js';
 import  {Login} from 'components/Login';
 import {Header} from 'components/Header';
 import {Logout} from 'components/Logout';
 import {AddForm} from 'components/AddForm';
-import Resource from 'pages/Resource';
+import Resource from 'components/Topic/Resource';
 import CarPool from 'pages/CarPool';
 import UpcomingEvents from 'pages/UpComingEvents';
 import {EditForm} from 'components/EditForm';
 import {ViewResource} from 'components/View';
+
 
 class PtaApp extends Component{
     render(){

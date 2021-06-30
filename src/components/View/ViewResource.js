@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Box, Heading, Divider } from "@chakra-ui/react";
-import { AuthenticationService } from "components/Services";
+import { AuthenticationService } from 'components/Services';
 
 
 
@@ -21,6 +21,7 @@ class ViewResource extends Component {
 
 }
     componentDidMount(){
+        // setInterval
         this.setState({isLoading:false})
         this.loadapi();
     }

@@ -45,8 +45,11 @@ loginClicked(event){
  
 }
 SignUpclicked(event){
-event.preventDefault();
-this.props.history.push(`/Signup/${this.state.showSignupMsg}`);
+event.preventDefault(); this.props.history.push(`/Signup/${this.state.showSignupMsg}`);
+// this.props.history.push({
+//   pathname:'/Signup',
+//   state:{showSignupMsg:this.state.showSignupMsg}
+// })
 
 }
 
